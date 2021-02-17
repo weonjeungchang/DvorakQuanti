@@ -1,0 +1,7 @@
+**성과요인분해**
+- 주식 : Brinson-Fachler / Buttom-up
+- 채권 : Lehmann / 4-요인분해 / Campisi
+
+**Multi Period Smoothing**
+- Carino : Brinson-Fachler / Lehmann / 4-요인분해 (초과성과분해)
+- Laker : Buttom-up / Campisi (자산성과분해)
