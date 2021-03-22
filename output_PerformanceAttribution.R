@@ -1,6 +1,6 @@
 tabPanel("Performance Attribution",
-         # includeMarkdown('performanceAttribution.Rmd'),
-         #
+         includeMarkdown('performanceAttribution.Rmd'),
+         
          sidebarPanel(
            style = "position:fixed; width:20%",
            uiOutput('assetType'),
@@ -15,7 +15,7 @@ tabPanel("Performance Attribution",
                                   "Shinhan Life Pension Short-Term",
                                   "Shinhan SRI Equity Hybrid VL 1",
                                   "Shinhan SRI Bond Hybrid VL",
-                                  "Shinhan Nonparticipating VIP Bond VL ",
+                                  "Shinhan Nonparticipating VIP Bond VL Ⅲ",
                                   "Shinhan Saving Bond VL",
                                   "Shinhan Life VUL Premium",
                                   "SH Fundamental Index",

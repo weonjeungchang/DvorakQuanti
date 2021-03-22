@@ -1,0 +1,71 @@
+The arithmetic excess returns are decomposed into the sum of allocation, selection and interaction effects across n sectors:
+
+R_{p}-R_{b}=∑^{n}_{i=1}≤ft(A_{i}+S_{i}+I_{i}\right)
+
+The arithmetic attribution effects for the category i are computed as suggested in the Brinson, Hood and Beebower (1986): Allocation effect
+
+Ai = (wpi - wbi) * Rbi
+
+Selection effect
+
+Si = wpi * (Rpi - Rbi)
+
+Interaction effect
+
+Ii = (wpi - wbi) * Rpi - Rbi
+
+Rp - total portfolio returns, Rb - total benchmark returns, wpi - weights of the category i in the portfolio, wbi - weights of the category i in the benchmark, Rpi - returns of the portfolio category i, Rbi - returns of the benchmark category i. If Brinson and Fachler (1985) is selected the allocation effect differs:
+
+Ai = (wpi - wbi) * (Rbi - Rb)
+
+Depending on goals we can give priority to the allocation or to the selection effects. If the priority is given to the sector allocation the interaction term will be combined with the security selection effect (top-down approach). If the priority is given to the security selection, the interaction term will be combined with the asset-allocation effect (bottom-up approach). Usually we have more than one period. In that case individual arithmetic attribution effects should be adjusted using linking methods. Adjusted arithmetic attribution effects can be summed up over time to provide the multi-period summary:
+
+R_{p}-R_{b}=∑^{T}_{t=1}≤ft(A_{t}'+S_{t}'+I_{t}'\right)
+
+where T is the number of periods and prime stands for the adjustment. The geometric attribution effects do not suffer from the linking problem. Moreover we don't have the interaction term. For more details about the geometric attribution see the documentation to Attribution.geometric. Finally, arithmetic annualized excess returns are computed as the arithmetic difference between annualised portfolio and benchmark returns:
+
+AAER = ra - ba
+
+the geometric annualized excess returns are computed as the geometric difference between annualized portfolio and benchmark returns:
+
+GAER = (1 + ra) / (1 + ba) - 1
+
+In the case of multi-currency portfolio, the currency return, currency surprise and forward premium should be specified. The multi-currency arithmetic attribution is handled following Ankrim and Hensel (1992). Currency returns are decomposed into the sum of the currency surprise and the forward premium:
+
+Rci = Rcei + Rfpi
+
+where
+
+R_{cei} = \frac{S_{i}^{t+1} - F_{i}^{t+1}}{S_{i}^{t}}
+
+R_{fpi} = \frac{F_{i}^{t+1}}{S_{i}^{t}} - 1
+
+Sit - spot rate for asset i at time t Fit - forward rate for asset i at time t. Excess returns are decomposed into the sum of allocation, selection and interaction effects as in the standard Brinson model:
+
+R_{p}-R_{b}=∑^{n}_{i=1}≤ft(A_{i}+S_{i}+I_{i}\right)
+
+However the allocation effect is computed taking into account currency effects:
+
+Ai = (wpi - wbi) * (Rbi - Rci - Rl)
+
+Benchmark returns adjusted to the currency:
+
+R_{l} = ∑^{n}_{i=1}w_{bi}\times(R_{bi}-R_{ci})
+
+The contribution from the currency is analogous to asset allocation:
+
+C_{i} = (w_{pi} - w_{bi}) \times (R_{cei} - e) + (w_{pfi} - w_{bfi}) \times (R_{fi} - e)
+
+where
+
+e = ∑^{n}_{i=1}w_{bi}\times R_{cei}
+
+The final term, forward premium, is also analogous to the asset allocation:
+
+Rfi = (wpi - wbi) * (Rfpi - d)
+
+where
+
+d = ∑^{n}_{i=1}w_{bi}\times R_{fpi}
+
+and R_{fpi} - forward premium In general if the intent is to estimate statistical parameters, the arithmetic excess return is preferred. However, due to the linking challenges, it may be preferable to use geometric excess return if the intent is to link and annualize excess returns.
